@@ -1,11 +1,11 @@
 Unbound DNS is an excellent DNS server to run at home and your own network. One of the important features of Unbound DNS is Response Policy Zones.
 Using RPZ functionality Unbound DNS can pass or block configured DNS entries. For many uses this can be used to manage and block ads, trackers and any unwanted domains.
-What is missing from Unbound implementaion is the utility to configure and load lists contaioning bad domains.
+What is missing from Unbound implementation is the utility to configure and load lists containing bad domains.
 
 Provided here zone-load.sh script can be used to manage domain lists and auto reload Unbound when a given list has changed or was updated.
 The file is using existing Unbound configuration to read domain lists, download updated list and reload Unbound.
 
-Best practice is to crreate a separate confoiguration file listing all domain lists, then include the file in unbound.conf.
+Best practice is to create a separate configuration file listing all domain lists, then include the file in unbound.conf.
 Here is a simple example.
 
 zone.conf 
@@ -31,7 +31,7 @@ rpz:
 The zone.conf file must be included in unbound.conf with the folowing
   include: "/etc/unbound/<directory>/zone.conf"
 
-With the following example domain lists "smart-tv" and "blockhost" are static lists. It means these are managed by adminstrator manually.
+With the following example domain lists "smart-tv" and "blockhost" are static lists. It means these are managed by administrator manually.
 Here is an example of "blockhost" file.
 
 $TTL 6h
