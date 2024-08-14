@@ -10,15 +10,15 @@ Here is a simple example.
 
 zone.conf 
 
-rpz:
-    name: blockhost
-    zonefile: /Users/Files/scripts/unbound/rpz.blockhost.txt
-
-rpz:
-    name: urlhause
-    url: https://urlhaus.abuse.ch/downloads/rpz/
-    zonefile: /Users/Files/scripts/unbound/rpz.urlhause.txt
-
+rpz:  
+    name: blockhost  
+    zonefile: /Users/Files/scripts/unbound/rpz.blockhost.txt  
+  
+rpz:  
+    name: urlhause  
+    url: https://urlhaus.abuse.ch/downloads/rpz/. 
+    zonefile: /Users/Files/scripts/unbound/rpz.urlhause.txt. 
+  
 rpz:
    name: stevenblack
    #url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
