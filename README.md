@@ -5,8 +5,10 @@ For example, domain lists with the format "0.0.0.0 somedomin.com" or "127.0.0.1 
 
 Provided here zone-load.sh script can be used to manage domain lists and auto reload Unbound when a given list has changed or was updated. The utility is able to convert non-rpz format domain lists into proper rpz format, thus allowing unbound to use them. The file is using existing Unbound configuration to read domain lists, download updated list and to reload Unbound when domain lists have been updated.
 
-Best practice is to create a separate configuration file listing all domain lists, then include the file in unbound.conf.
-Initialy you should run zone-load.sh -c zone.conf manually in order to download domain lists and create files. Then, include zone.conf in unbound.conf and finaly restart unbound itself.
+Best practice is to create a separate configuration file (zone.conf in our example) listing all domain lists you like, then include the file in unbound.conf.
+Initialy you should run zone-load.sh -c zone.conf manually in order to download domain lists and create files. Then, include zone.conf in unbound.conf and finaly restart unbound itself. After runing zone-load.sh -c zone.conf edit unbound.conf and as a last line add the following line and restart unbound.
+    include: "/etc/unbound/<directory>/zone.conf" 
+
 
 Here is a simple example.
 
