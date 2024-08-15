@@ -52,7 +52,7 @@ From the zone.conf file we can see another example of Unbound RPZ "urlhause". Th
 Since Unbound supports standrd rpz this is automaticly refreshed and reloaded.
 
 Not all domain lists are published in rpz format and therefor we need ways to import these lists properly into unbound. zone-load.sh utility do just that.
-Look at the example of "stevenblack" domain list. This list is not in rpz format. The utility will convert the list to rps format and also check if the file has changed before downloading it again. 
+Look at the example of "stevenblack" domain list. This list is not in rpz format. The utility will convert the list to rps format and also check if the file has changed before downloading it again. Its important to note that zone-load.sh will look for #url tags to download the zone file. It will only download the file if the source file has chaged since last download. Also, if new file is downloaded only that specific unbound zone will be reloaded thus unaffecting unbound cache and other zones.
 
 It is recommended to invoke zone-load.sh form cron periodically but you can run it manually. To execute zone-load.sh from cron inclue the following in cron job but change the directory name where the file exists.
   
