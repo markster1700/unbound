@@ -1,9 +1,9 @@
 Unbound DNS is an excellent DNS server to run at home and your own network. One of the important features of Unbound DNS is Response Policy Zones.
-Using RPZ functionality Unbound DNS can pass or block configured DNS entries. For many uses this can be used to manage and block ads, trackers and any unwanted domains.
-What is missing from Unbound implementation is the utility to configure and load lists containing bad domains.
+Using RPZ functionality Unbound DNS can pass or block managed DNS entries. This can be used to manage block ads, trackers and any unwanted domains.
+What is missing from Unbound implementation is the utility to configure and load lists containing domains list that do not follow RPZ format.
+For example, domain lists with the format "0.0.0.0 somedomin.com" or "127.0.0.1 mydomain.org" are not RPZ format and cannot be used with Unbound.
 
-Provided here zone-load.sh script can be used to manage domain lists and auto reload Unbound when a given list has changed or was updated.
-The file is using existing Unbound configuration to read domain lists, download updated list and reload Unbound.
+Provided here zone-load.sh script can be used to manage domain lists and auto reload Unbound when a given list has changed or was updated. The utility is able to convert non-rpz format domain lists into proper rpz format, thus allowing unbound to use them. The file is using existing Unbound configuration to read domain lists, download updated list and to reload Unbound when domain lists have been updated.
 
 Best practice is to create a separate configuration file listing all domain lists, then include the file in unbound.conf.
 Here is a simple example.
